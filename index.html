@@ -1,12 +1,1148 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohit's Portfolio</title>
+  <!-- Optimized Font Loading -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    html, body {
+      height: 100%;
+    }
+    
+    body {
+      background: url('https://i.pinimg.com/736x/e2/e8/3c/e2e83c92d3fc6101b73e63afba111120.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    
+    /*  HEADER STYLES */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      background-color: #57BDB1;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    #logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: #212529;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: #f9d423;
+    }
+    
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background: #f9d423;
+    }
+    
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* MAIN CONTENT STYLES */
+    main {
+      margin-top: 80px;
+    }
+    
+    .hero-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      min-height: calc(100vh - 80px);
+    }
+    
+    .hero-left {
+      width: 50%;
+      padding: 2rem;
+    }
+    
+    .hero-left h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #212529;
+    }
+    
+    .hero-left p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #444;
+      line-height: 1.6;
+    }
+    
+    .btn-container {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .know-more-btn, .download-btn {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      min-width: 150px;
+    }
+    
+    .know-more-btn {
+      background: #36B198;
+      color: #fff;
+    }
+    
+    .download-btn {
+      background: #F2C955;
+      color: #212529;
+    }
+
+    #dwn-rsm {
+      text-decoration: none;
+    }
+    
+    .know-more-btn:hover, .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .social-icons a {
+      color: #212529;
+      font-size: 1.8rem;
+      transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: #36B198;
+      transform: translateY(-3px);
+    }
+    
+    .hero-right {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .profile-pic {
+      border: 10px solid #F2C955;
+      width: 300px;
+      height: 400px;
+      border-radius: 50% / 40%;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+    
+    .profile-pic:hover {
+      transform: scale(1.03);
+    }
+    
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .divider {
+      width: 100%;
+      height: 2px;
+      background-color: #36B198;
+      margin: 0 auto;
+    }
+    
+    /* ===== SECTION STYLES ===== */
+    .section {
+      padding: 4rem 2rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .section-title {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #36B198;
+      text-align: center;
+    }
+    
+    /* Skills Section */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 900px;
+    }
+    
+    .skill-box {
+      background: white;
+      padding: 1.5rem 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    
+    .skill-box:hover {
+      transform: translateY(-5px);
+    }
+    
+    .skill-box i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Certificates Section */
+    .certificate-section {
+      padding: 4rem 2rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .certificate-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+    }
+    
+    .certificate {
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .certificate:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .certificate-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .certificate-info {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .certificate-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    
+    .certificate-date {
+      color: #7f8c8d;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+    
+    .view-btn {
+      display: inline-block;
+      padding: 8px 20px;
+      background: #36B198;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s;
+    }
+    
+    .view-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    /* Quiz Section */
+    .quiz-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    
+    .quiz-question {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .quiz-option {
+      padding: 1rem;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .quiz-option:hover {
+      background: #e9e9e9;
+    }
+    
+    .quiz-result {
+      font-weight: bold;
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    
+    /* API Section */
+    .api-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+    
+    .api-data {
+      margin-top: 1rem;
+      padding: 1.5rem;
+      background: #f5f5f5;
+      border-radius: 5px;
+      text-align: left;
+    }
+    
+    /* Products Section */
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    select {
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    
+    #productList {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+    
+    .product {
+      background: white;
+      padding: 1.8rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      text-align: center;
+    }
+    
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    
+    /* To-Do Section */
+    .todo-container {
+      max-width: 600px;
+      width: 100%;
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    
+    .todo-input {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .todo-input input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+    
+    .todo-input button {
+      padding: 0.8rem 1.5rem;
+      background: #36B198;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    
+    .todo-list {
+      list-style: none;
+    }
+    
+    .todo-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .todo-list button {
+      background: #F2C955;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    
+    /* Contact Section */
+    .contact-form {
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    /* Footer */
+    footer {
+      background: #212529;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    /* ===== RESPONSIVE STYLES ===== */
+    @media (max-width: 1024px) {
+      .hero-left h2 {
+        font-size: 2.2rem;
+      }
+      
+      .profile-pic {
+        width: 280px;
+        height: 380px;
+      }
+      
+      .certificate-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+
+      .social-icons {
+      	display: flex;
+      	justify-content: center;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #57BDB1;
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+      }
+      
+      nav.active {
+        display: flex;
+      }
+      
+      .hero-section {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+      
+      .hero-left, .hero-right {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .btn-container {
+        justify-content: center;
+      }
+      
+      .profile-pic {
+        margin-top: 2rem;
+        width: 250px;
+        height: 350px;
+      }
+      
+      .section {
+        padding: 3rem 1.5rem;
+      }
+
+      .section p {
+      	text-align: justify;
+      }
+      
+      .certificate-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      #logo {
+        font-size: 1.5rem;
+      }
+      
+      .hero-left h2 {
+        font-size: 1.8rem;
+      }
+      
+      .btn-container {
+        flex-direction: column;
+      }
+      
+      .profile-pic {
+        width: 220px;
+        height: 320px;
+      }
+
+      .section p {
+      	text-align: justify;
+      }
+      
+      .filters {
+        flex-direction: column;
+      }
+      
+      .todo-input {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    Hello .............
+  <header>
+    <h1 id="logo">Mohit's Portfolio</h1>
+    <button class="menu-toggle">☰</button>
+    <nav id="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificate">Certificates</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#api">API</a>
+      <a href="#products">Products</a>
+      <a href="#todo">To-Do</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-left">
+        <h2>Hello, I'm <span style="color: #1CB5B0;">Mohit Kumar</span> 👋</h2>
+        <p>I am a BCA (2nd Year) student passionate about web development and modern technology.</p>
+        
+        <div class="btn-container">
+          <button class="know-more-btn" onclick="scrollToSection('#about')">Know More</button>
+          <a id="dwn-rsm" href="https://raw.githubusercontent.com/mohitroh703381/Apex-Internship-Task-5/main/RESUME.pdf" download class="download-btn">
+          <i class="fa-solid fa-download"></i>
+          Download Resume  
+          </a>
+
+        </div>
+        
+        <div class="social-icons">
+          <a href="https://github.com/mohitroh703381" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/in/mohit-kumar-3252982b4" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="hero-right">
+        <div class="profile-pic">
+          <img src="https://i.postimg.cc/jjghYx9h/PHOTO.jpg" alt="Mohit's Photo" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <h2 class="section-title">About Me</h2>
+      <div style="max-width: 800px; text-align: center;">
+        <p>I am a passionate and dedicated student currently pursuing a Bachelor of Computer Applications (BCA). I have a strong interest in web development and modern technologies, with a focus on building clean, responsive, and user-friendly web interfaces. Over time, I have gained practical experience in HTML, CSS, JavaScript, and frontend projects including portfolio websites, product listing pages, and to-do applications.</p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-container">
+        <div class="skill-box">
+          <i class="fab fa-html5" style="color: #E34F26;"></i>
+          <h3>HTML5</h3>
+        </div>
+        <div class="skill-box">
+          <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+          <h3>CSS3</h3>
+        </div>
+        <div class="skill-box">
+          <i class="fab fa-js" style="color: #F7DF1E;"></i>
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill-box">
+          <i class="fab fa-bootstrap" style="color: #7952B3;"></i>
+          <h3>Bootstrap</h3>
+        </div>
+        <div class="skill-box">
+          <i class="fas fa-code" style="color: #00599C;"></i>
+          <h3>C</h3>
+        </div>
+        <div class="skill-box">
+          <i class="fas fa-cogs" style="color: #00599C;"></i>
+          <h3>DSA Using C++</h3>
+        </div>
+        <div class="skill-box">
+          <i class="fas fa-database" style="color: #00758F;"></i>
+          <h3>DBMS</h3>
+        </div>
+         <div class="skill-box">
+          <i class="fas fa-server" style="color: #00758F;"></i>
+          <h3>MySQL</h3>
+        </div>
+        <div class="skill-box">
+          <i class="fab fa-git-alt" style="color: #F05032;"></i>
+          <h3>Git</h3>
+        </div>
+        <div class="skill-box">
+          <i class="fab fa-github" style="color: #333; font-size: 2rem;"></i>
+          <h3>GitHub</h3>
+        </div>
+      
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Certificates Section -->
+    <section class="certificate-section" id="certificate">
+      <h2 class="section-title">My Certificates</h2>
+      <div class="certificate-gallery">
+        <!-- Certificate 1 -->
+        <div class="certificate">
+          <img src="C:\Users\mohit\OneDrive\Pictures\Screenshots\Screenshot 2025-09-22 093718.png" alt="Internship in Web Development" class="certificate-img">
+          <div class="certificate-info">
+            <div class="certificate-title">Internship in Web Development</div>
+            <div class="certificate-date">Issued: Jul 21, 2025</div>
+            <a href="#" class="view-btn">View Certificate</a>
+            <a href="#" class="view-btn"><i class="fa-solid fa-download"></i> Download Certificate</a>
+          </div>
+        </div>
+        
+        <!-- Certificate 2 -->
+        <div class="certificate">
+          <img src="C:\Users\mohit\OneDrive\Pictures\Screenshots\Screenshot 2025-09-22 094358.png" alt="C Certificate" class="certificate-img">
+          <div class="certificate-info">
+            <div class="certificate-title">C Programming</div>
+            <div class="certificate-date">Issued: May 1, 2025</div>
+            <a href="#" class="view-btn">View Certificate</a>
+            <a href="#" class="view-btn"><i class="fa-solid fa-download"></i> Download Certificate</a>
+          </div>
+        </div>
+        
+        <!-- Certificate 3 -->
+        <div class="certificate">
+          <img src="C:\Users\mohit\OneDrive\Desktop\Mohit Personal\Certificates\ISRO Certificates .jpg" alt="ISRO Certificate" class="certificate-img">
+          <div class="certificate-info">
+            <div class="certificate-title">ISRO Certificate</div>
+            <div class="certificate-date">Issued: Feb 2, 2025</div>
+            <a href="#" class="view-btn">View Certificate</a>
+            <a href="#" class="view-btn"><i class="fa-solid fa-download"></i> Download Certificate</a>
+          </div>
+        </div>
+        
+        <!-- Certificate 4 -->
+        <div class="certificate">
+          <img src="C:\Users\mohit\OneDrive\Pictures\Screenshots\Screenshot 2025-09-22 095848.png" alt="Python Programming Certificate" class="certificate-img">
+          <div class="certificate-info">
+            <div class="certificate-title">Python Programming Bootcamp</div>
+            <div class="certificate-date">Issued: Aug 23, 2025</div>
+            <a href="#" class="view-btn">View Certificate</a>
+            <a href="#" class="view-btn"><i class="fa-solid fa-download"></i> Download Certificate</a>
+          </div>
+        </div>
+        
+        <!-- Certificate 5 -->
+        <div class="certificate">
+          <img src="C:\Users\mohit\OneDrive\Pictures\Screenshots\Screenshot 2025-09-22 100339.png" alt="Hackathon Certificate" class="certificate-img">
+          <div class="certificate-info">
+            <div class="certificate-title">Internal Hackthon 2025</div>
+            <div class="certificate-date">Issued: Feb 25, 2025</div>
+            <a href="#" class="view-btn">View Certificate</a>
+            <a href="#" class="view-btn"><i class="fa-solid fa-download"></i> Download Certificate</a>
+          </div>
+        </div>
+        
+        <!-- Certificate 6 -->
+        <div class="certificate">
+          <img src="C:\Users\mohit\OneDrive\Pictures\Screenshots\Screenshot 2025-09-22 100719.png" alt="Introduction of Computers Certificate" class="certificate-img">
+          <div class="certificate-info">
+            <div class="certificate-title">Introduction to computers</div>
+            <div class="certificate-date">Issued: Nov 30, 2024</div>
+            <a href="#" class="view-btn">View Certificate</a>
+            <a href="#" class="view-btn"><i class="fa-solid fa-download"></i> Download Certificate</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Quiz Section -->
+    <section class="section" id="quiz">
+      <h2 class="section-title">Interactive Quiz</h2>
+      <div class="quiz-container">
+        <div class="quiz-question" id="question">Loading question...</div>
+        <div class="quiz-options" id="options">
+          <!-- Options will be added by JavaScript -->
+        </div>
+        <button class="know-more-btn" id="next-btn" style="display: none; width: 100%; margin-top: 1rem;">Next Question</button>
+        <div id="result" class="quiz-result"></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- API Section -->
+    <section class="section" id="api">
+      <h2 class="section-title">API Data</h2>
+      <div class="api-container">
+        <button class="know-more-btn" id="fetch-btn" style="width: 100%; max-width: 300px;">Fetch User Data</button>
+        <div class="api-data" id="api-data">Data will appear here...</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+      <h2 class="section-title">📦 Products</h2>
+      <div class="filters">
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Books">Books</option>
+        </select>
+        
+        <select id="sortFilter">
+          <option value="">Sort By</option>
+          <option value="price">Price (Low to High)</option>
+          <option value="rating">Rating (High to Low)</option>
+        </select>
+      </div>
+      
+      <div id="productList"></div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- To-Do Section -->
+    <section class="section" id="todo">
+      <h2 class="section-title">📜 To-Do List</h2>
+      <div class="todo-container">
+        <div class="todo-input">
+          <input type="text" id="taskInput" placeholder="Enter a task...">
+          <button id="addTaskBtn">Add</button>
+        </div>
+        <ul id="taskList" class="todo-list"></ul>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <h2 class="section-title">☎️ Contact Me</h2>
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="know-more-btn" style="width: 100%;">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mohit's Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // MOBILE MENU TOGGLE 
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbar = document.getElementById('navbar');
+    
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      menuToggle.textContent = navbar.classList.contains('active') ? '✖' : '☰';
+    });
+    
+    // Close menu when clicking on links (mobile)
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navbar.classList.remove('active');
+          menuToggle.textContent = '☰';
+        }
+      });
+    });
+    
+    // SMOOTH SCROLLING 
+    function scrollToSection(sectionId) {
+      document.querySelector(sectionId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+    
+    // QUIZ FUNCTIONALITY
+    const quizData = [
+      {
+        question: "What is the capital of France?",
+        options: ["London", "Paris", "Berlin", "Madrid"],
+        answer: "Paris"
+      },
+      {
+        question: "Which language runs in a web browser?",
+        options: ["Java", "C", "Python", "JavaScript"],
+        answer: "JavaScript"
+      },
+      {
+        question: "What does HTML stand for?",
+        options: [
+          "HyperText Markup Language", 
+          "Hyper Transfer Markup Language", 
+          "Home Tool Markup Language", 
+          "Hyperlinks and Text Markup Language"
+        ],
+        answer: "HyperText Markup Language"
+      },
+      {
+        question: "Which of these is not a JavaScript framework?",
+        options: ["React", "Angular", "Laravel", "Vue"],
+        answer: "Laravel"
+      }
+    ];
+    
+    let currentQuestion = 0;
+    let score = 0;
+    const questionEl = document.getElementById('question');
+    const optionsEl = document.getElementById('options');
+    const nextBtn = document.getElementById('next-btn');
+    const resultEl = document.getElementById('result');
+    
+    function loadQuestion() {
+      const currentQuizData = quizData[currentQuestion];
+      questionEl.textContent = currentQuizData.question;
+      optionsEl.innerHTML = '';
+      
+      currentQuizData.options.forEach(option => {
+        const button = document.createElement('div');
+        button.classList.add('quiz-option');
+        button.textContent = option;
+        button.addEventListener('click', () => selectAnswer(option));
+        optionsEl.appendChild(button);
+      });
+      
+      nextBtn.style.display = 'none';
+      resultEl.textContent = '';
+    }
+    
+    function selectAnswer(selected) {
+      const correctAnswer = quizData[currentQuestion].answer;
+      const options = optionsEl.querySelectorAll('.quiz-option');
+      
+      options.forEach(option => {
+        option.style.pointerEvents = 'none';
+        if (option.textContent === correctAnswer) {
+          option.style.background = '#d4edda';
+        } else if (option.textContent === selected && selected !== correctAnswer) {
+          option.style.background = '#f8d7da';
+        }
+      });
+      
+      if (selected === correctAnswer) {
+        score++;
+        resultEl.textContent = 'Correct!';
+        resultEl.style.color = 'green';
+      } else {
+        resultEl.textContent = `Incorrect! Correct answer: ${correctAnswer}`;
+        resultEl.style.color = 'red';
+      }
+      
+      nextBtn.style.display = 'block';
+    }
+    
+    nextBtn.addEventListener('click', () => {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        questionEl.textContent = 'Quiz Completed!';
+        optionsEl.innerHTML = '';
+        nextBtn.style.display = 'none';
+        resultEl.textContent = `Your score: ${score}/${quizData.length}`;
+        resultEl.style.color = '#36B198';
+      }
+    });
+    
+    // API FETCHING
+    const fetchBtn = document.getElementById('fetch-btn');
+    const apiDataEl = document.getElementById('api-data');
+    
+    fetchBtn.addEventListener('click', async () => {
+      try {
+        fetchBtn.disabled = true;
+        fetchBtn.textContent = 'Fetching...';
+        apiDataEl.textContent = 'Loading data...';
+        
+        const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+        const data = await response.json();
+        
+        apiDataEl.innerHTML = `
+          <p><strong>Name:</strong> ${data.name}</p>
+          <p><strong>Email:</strong> ${data.email}</p>
+          <p><strong>Phone:</strong> ${data.phone}</p>
+          <p><strong>Website:</strong> ${data.website}</p>
+        `;
+      } catch (error) {
+        apiDataEl.textContent = 'Error fetching data. Please try again.';
+      } finally {
+        fetchBtn.disabled = false;
+        fetchBtn.textContent = 'Fetch User Data';
+      }
+    });
+    
+    // PRODUCTS FILTERING
+    const products = [
+      { name: "Smartphone", category: "Electronics", price: 299, rating: 4.5 },
+      { name: "Laptop", category: "Electronics", price: 999, rating: 4.7 },
+      { name: "Headphones", category: "Electronics", price: 99, rating: 4.0 },
+      { name: "JavaScript Book", category: "Books", price: 29, rating: 4.8 },
+      { name: "CSS Guide", category: "Books", price: 19, rating: 4.3 },
+      { name: "HTML Reference", category: "Books", price: 24, rating: 4.1 }
+    ];
+    
+    const categoryFilter = document.getElementById('categoryFilter');
+    const sortFilter = document.getElementById('sortFilter');
+    const productList = document.getElementById('productList');
+    
+    function displayProducts(productsToDisplay) {
+      productList.innerHTML = '';
+      
+      productsToDisplay.forEach(product => {
+        const productEl = document.createElement('div');
+        productEl.classList.add('product');
+        productEl.innerHTML = `
+          <h3>${product.name}</h3>
+          <p><strong>Category:</strong> ${product.category}</p>
+          <p><strong>Price:</strong> $${product.price}</p>
+          <p><strong>Rating:</strong> ${product.rating} ★</p>
+        `;
+        productList.appendChild(productEl);
+      });
+    }
+    
+    function applyFilters() {
+      let filteredProducts = [...products];
+      const category = categoryFilter.value;
+      const sort = sortFilter.value;
+      
+      // Filter by category
+      if (category) {
+        filteredProducts = filteredProducts.filter(product => product.category === category);
+      }
+      
+      // Sort products
+      if (sort === 'price') {
+        filteredProducts.sort((a, b) => a.price - b.price);
+      } else if (sort === 'rating') {
+        filteredProducts.sort((a, b) => b.rating - a.rating);
+      }
+      
+      displayProducts(filteredProducts);
+    }
+    
+    categoryFilter.addEventListener('change', applyFilters);
+    sortFilter.addEventListener('change', applyFilters);
+    
+    // TO-DO LIST 
+    const taskInput = document.getElementById('taskInput');
+    const addTaskBtn = document.getElementById('addTaskBtn');
+    const taskList = document.getElementById('taskList');
+    
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    
+    function renderTasks() {
+      taskList.innerHTML = '';
+      
+      tasks.forEach((task, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span>${task}</span>
+          <button onclick="deleteTask(${index})">Delete</button>
+        `;
+        taskList.appendChild(li);
+      });
+    }
+    
+    function addTask() {
+      const taskText = taskInput.value.trim();
+      if (taskText) {
+        tasks.push(taskText);
+        taskInput.value = '';
+        saveTasks();
+        renderTasks();
+      }
+    }
+    
+    function deleteTask(index) {
+      tasks.splice(index, 1);
+      saveTasks();
+      renderTasks();
+    }
+    
+    function saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+    
+    addTaskBtn.addEventListener('click', addTask);
+    taskInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        addTask();
+      }
+    });
+    
+    // CONTACT FORM 
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your message! I will get back to you soon.');
+      contactForm.reset();
+    });
+    
+    // INITIALIZE 
+    loadQuestion();
+    applyFilters();
+    renderTasks();
+  </script>
 </body>
 </html>
