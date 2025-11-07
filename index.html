@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohit's Portfolio</title>
   <!-- Optimized Font Loading -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
   <style>
+    
     * {
       margin: 0;
       padding: 0;
@@ -22,7 +24,7 @@
     }
     
     body {
-      background: url('https://i.pinimg.com/736x/e2/e8/3c/e2e83c92d3fc6101b73e63afba111120.jpg') no-repeat center center fixed;
+      background: url('/images/bg-img.jpg') no-repeat center center fixed;
       background-size: cover;
     }
     
@@ -201,6 +203,11 @@
     }
     
     /* ===== SECTION STYLES ===== */
+
+    .all-bg{
+        background-color: #d9eaef;
+    }
+    
     .section {
       padding: 4rem 2rem;
       background-color: rgba(255, 255, 255, 0.9);
@@ -227,7 +234,7 @@
     }
     
     .skill-box {
-      background: white;
+      /* background: white; */
       padding: 1.5rem 1rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -270,10 +277,10 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .certificate:hover {
+    /* .certificate:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
+    } */
     
     .certificate-img {
       width: 100%;
@@ -308,7 +315,7 @@
       text-decoration: none;
       border-radius: 50px;
       font-size: 0.9rem;
-      transition: background-color 0.3s;
+      transition: all 0.3s;
     }
 
     .download-btn {
@@ -323,7 +330,7 @@
     
     /* Quiz Section */
     .quiz-container {
-      background: white;
+      /* background: white; */
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -366,7 +373,7 @@
     
     /* API Section */
     .api-container {
-      background: white;
+      /* background: white; */
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -409,7 +416,7 @@
     }
     
     .product {
-      background: white;
+      background: #d9eaef;
       padding: 1.8rem;
       border-radius: 15px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.1);
@@ -426,7 +433,7 @@
     .todo-container {
       max-width: 600px;
       width: 100%;
-      background: white;
+      /* background: white; */
       padding: 2rem;
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
@@ -490,7 +497,7 @@
     
     .form-group input,
     .form-group textarea {
-      width: 100%;
+      width: 600px;
       padding: 1rem;
       border: 1px solid #ddd;
       border-radius: 5px;
@@ -498,7 +505,7 @@
     }
     
     .form-group textarea {
-      min-height: 150px;
+      min-height: 140px;
       resize: vertical;
     }
     
@@ -579,10 +586,6 @@
       .section {
         padding: 3rem 1.5rem;
       }
-
-      .section p {
-      	text-align: justify;
-      }
       
       .certificate-gallery {
         grid-template-columns: 1fr;
@@ -610,10 +613,6 @@
         width: 220px;
         height: 320px;
       }
-
-      .section p {
-      	text-align: justify;
-      }
       
       .filters {
         flex-direction: column;
@@ -622,6 +621,16 @@
       .todo-input {
         flex-direction: column;
       }
+
+      select option {
+        font-size: 15px;
+        font-weight: 450;
+      }
+
+      .form-group input,
+      .form-group textarea {
+      width: 340px;
+    }
     }
   </style>
 </head>
@@ -653,7 +662,7 @@
           <button class="know-more-btn" onclick="scrollToSection('#about')">Know More</button>
           <a id="dwn-rsm" href="https://raw.githubusercontent.com/mohitroh703381/Apex-Internship-Task-5/main/RESUME.pdf" download class="download-btn">
           <i class="fa-solid fa-download"></i>
-          Download Resume  
+          Download Resume 
           </a>
 
         </div>
@@ -669,7 +678,8 @@
       
       <div class="hero-right">
         <div class="profile-pic">
-          <img src="https://i.postimg.cc/jjghYx9h/PHOTO.jpg" alt="Mohit's Photo" loading="lazy">
+          <!-- <img src="https://i.postimg.cc/jjghYx9h/PHOTO.jpg" alt="Mohit's Photo" loading="lazy"> -->
+          <img src="images/port-img.jpg" alt="Mohit's Photo" loading="lazy">
         </div>
       </div>
     </section>
@@ -690,43 +700,43 @@
     <section class="section" id="skills">
       <h2 class="section-title">My Skills</h2>
       <div class="skills-container">
-        <div class="skill-box">
+        <div class="skill-box all-bg">
           <i class="fab fa-html5" style="color: #E34F26;"></i>
           <h3>HTML5</h3>
         </div>
-        <div class="skill-box">
+        <div class="skill-box all-bg">
           <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
           <h3>CSS3</h3>
         </div>
-        <div class="skill-box">
+        <div class="skill-box all-bg">
           <i class="fab fa-js" style="color: #F7DF1E;"></i>
           <h3>JavaScript</h3>
         </div>
-        <div class="skill-box">
+        <div class="skill-box all-bg">
           <i class="fab fa-bootstrap" style="color: #7952B3;"></i>
           <h3>Bootstrap</h3>
         </div>
-        <div class="skill-box">
+        <div class="skill-box all-bg">
           <i class="fas fa-code" style="color: #00599C;"></i>
           <h3>C</h3>
         </div>
-        <div class="skill-box">
+        <div class="skill-box all-bg">
           <i class="fas fa-cogs" style="color: #00599C;"></i>
           <h3>DSA Using C++</h3>
         </div>
-        <div class="skill-box">
+        <div class="skill-box all-bg">
           <i class="fas fa-database" style="color: #00758F;"></i>
           <h3>DBMS</h3>
         </div>
-         <div class="skill-box">
+         <div class="skill-box all-bg">
           <i class="fas fa-server" style="color: #00758F;"></i>
           <h3>MySQL</h3>
         </div>
-        <div class="skill-box">
+        <div class="skill-box all-bg">
           <i class="fab fa-git-alt" style="color: #F05032;"></i>
           <h3>Git</h3>
         </div>
-        <div class="skill-box">
+        <div class="skill-box all-bg">
           <i class="fab fa-github" style="color: #333; font-size: 2rem;"></i>
           <h3>GitHub</h3>
         </div>
@@ -743,18 +753,19 @@
         <!-- Certificate 1 -->
         <div class="certificate">
           <img src="images/internship.png" alt="Internship in Web Development" class="certificate-img">
-          <div class="certificate-info">
+          <div class="certificate-info all-bg">
             <div class="certificate-title">Internship in Web Development</div>
             <div class="certificate-date">Issued: Jul 21, 2025</div>
-            <a href="#" class="view-btn view">View Certificate</a>
-            <a href="#" class="view-btn download-btn"><i class="fa-solid fa-download"></i> Download Certificate</a>
+            <!-- <a href="#" class="view-btn view">View Certificate</a> -->
+            <button class="view-btn veiw">View Certificate</button>
+            <a href="C:\Users\mohit\OneDrive\Desktop\PORTFOLIO\images\internship.png" download="images" class="view-btn download-btn"><i class="fa-solid fa-download"></i> Download Certificate</a>
           </div>
         </div>
         
         <!-- Certificate 2 -->
         <div class="certificate">
           <img src="images/c.png" alt="C Certificate" class="certificate-img">
-          <div class="certificate-info">
+          <div class="certificate-info all-bg">
             <div class="certificate-title">C Programming</div>
             <div class="certificate-date">Issued: May 1, 2025</div>
             <a href="#" class="view-btn view">View Certificate</a>
@@ -765,7 +776,7 @@
         <!-- Certificate 3 -->
         <div class="certificate">
           <img src="images/isro.png" alt="ISRO Certificate" class="certificate-img">
-          <div class="certificate-info">
+          <div class="certificate-info all-bg">
             <div class="certificate-title">ISRO Certificate</div>
             <div class="certificate-date">Issued: Feb 2, 2025</div>
             <a href="#" class="view-btn view">View Certificate</a>
@@ -776,7 +787,7 @@
         <!-- Certificate 4 -->
         <div class="certificate">
           <img src="images/python.png" alt="Python Programming Certificate" class="certificate-img">
-          <div class="certificate-info">
+          <div class="certificate-info all-bg">
             <div class="certificate-title">Python Programming Bootcamp</div>
             <div class="certificate-date">Issued: Aug 23, 2025</div>
             <a href="#" class="view-btn view">View Certificate</a>
@@ -787,7 +798,7 @@
         <!-- Certificate 5 -->
         <div class="certificate">
           <img src="images/hackathon.png" alt="Hackathon Certificate" class="certificate-img">
-          <div class="certificate-info">
+          <div class="certificate-info all-bg">
             <div class="certificate-title">Internal Hackthon 2025</div>
             <div class="certificate-date">Issued: Feb 25, 2025</div>
             <a href="#" class="view-btn view">View Certificate</a>
@@ -798,7 +809,7 @@
         <!-- Certificate 6 -->
         <div class="certificate">
           <img src="images/computer.png" alt="Introduction of Computers Certificate" class="certificate-img">
-          <div class="certificate-info">
+          <div class="certificate-info all-bg">
             <div class="certificate-title">Introduction to computers</div>
             <div class="certificate-date">Issued: Nov 30, 2024</div>
             <a href="#" class="view-btn view">View Certificate</a>
@@ -813,7 +824,7 @@
     <!-- Quiz Section -->
     <section class="section" id="quiz">
       <h2 class="section-title">Interactive Quiz</h2>
-      <div class="quiz-container">
+      <div class="quiz-container all-bg">
         <div class="quiz-question" id="question">Loading question...</div>
         <div class="quiz-options" id="options">
           <!-- Options will be added by JavaScript -->
@@ -828,7 +839,7 @@
     <!-- API Section -->
     <section class="section" id="api">
       <h2 class="section-title">API Data</h2>
-      <div class="api-container">
+      <div class="api-container all-bg">
         <button class="know-more-btn" id="fetch-btn" style="width: 100%; max-width: 300px;">Fetch User Data</button>
         <div class="api-data" id="api-data">Data will appear here...</div>
       </div>
@@ -861,7 +872,7 @@
     <!-- To-Do Section -->
     <section class="section" id="todo">
       <h2 class="section-title">📜 To-Do List</h2>
-      <div class="todo-container">
+      <div class="todo-container all-bg">
         <div class="todo-input">
           <input type="text" id="taskInput" placeholder="Enter a task...">
           <button id="addTaskBtn">Add</button>
@@ -875,17 +886,17 @@
     <!-- Contact Section -->
     <section class="section" id="contact">
       <h2 class="section-title">☎️ Contact Me</h2>
-      <form class="contact-form" id="contactForm">
+      <form autocomplete="off" method="post" name="google-sheet">
         <div class="form-group">
-          <input type="text" placeholder="Your Name" required>
+          <input type="text" placeholder="Your Name" name="name" required>
         </div>
         <div class="form-group">
-          <input type="email" placeholder="Your Email" required>
+          <input type="email" placeholder="Your Email" name="email" required>
         </div>
         <div class="form-group">
-          <textarea placeholder="Your Message" required></textarea>
+          <textarea placeholder="Your Message" name="message" required></textarea>
         </div>
-        <button type="submit" class="know-more-btn" style="width: 100%;">Send Message</button>
+        <button type="submit" name="submit" class="know-more-btn" style="width: 100%;">Send Message</button>
       </form>
     </section>
   </main>
@@ -923,32 +934,167 @@
     
     // QUIZ FUNCTIONALITY
     const quizData = [
-      {
-        question: "What is the capital of France?",
-        options: ["London", "Paris", "Berlin", "Madrid"],
-        answer: "Paris"
-      },
-      {
-        question: "Which language runs in a web browser?",
-        options: ["Java", "C", "Python", "JavaScript"],
-        answer: "JavaScript"
-      },
-      {
-        question: "What does HTML stand for?",
-        options: [
-          "HyperText Markup Language", 
-          "Hyper Transfer Markup Language", 
-          "Home Tool Markup Language", 
-          "Hyperlinks and Text Markup Language"
-        ],
-        answer: "HyperText Markup Language"
-      },
-      {
-        question: "Which of these is not a JavaScript framework?",
-        options: ["React", "Angular", "Laravel", "Vue"],
-        answer: "Laravel"
-      }
-    ];
+  {
+    question: "Which language runs in a web browser?",
+    options: ["Java", "C", "Python", "JavaScript"],
+    answer: "JavaScript"
+  },
+  {
+    question: "What does HTML stand for?",
+    options: [
+      "HyperText Markup Language",
+      "Hyper Transfer Markup Language",
+      "Home Tool Markup Language",
+      "Hyperlinks and Text Markup Language"
+    ],
+    answer: "HyperText Markup Language"
+  },
+  {
+    question: "Which tag is used to create a hyperlink in HTML?",
+    options: ["<link>", "<a>", "<href>", "<hyper>"],
+    answer: "<a>"
+  },
+  {
+    question: "Which property is used to change text color in CSS?",
+    options: ["font-color", "text-color", "color", "background-color"],
+    answer: "color"
+  },
+  {
+    question: "Which HTML tag is used to insert an image?",
+    options: ["<img>", "<image>", "<src>", "<pic>"],
+    answer: "<img>"
+  },
+  {
+    question: "Which symbol is used for comments in JavaScript?",
+    options: ["//", "/* */", "#", "<!-- -->"],
+    answer: "//"
+  },
+  {
+    question: "What does CSS stand for?",
+    options: [
+      "Computer Style Sheets",
+      "Creative Style Sheets",
+      "Cascading Style Sheets",
+      "Colorful Style Sheets"
+    ],
+    answer: "Cascading Style Sheets"
+  },
+  {
+    question: "Which tag is used for the largest heading in HTML?",
+    options: ["<h6>", "<heading>", "<h1>", "<head>"],
+    answer: "<h1>"
+  },
+  {
+    question: "Which attribute is used to provide alternate text for an image?",
+    options: ["title", "alt", "src", "href"],
+    answer: "alt"
+  },
+  {
+    question: "Which CSS property controls the text size?",
+    options: ["font-style", "text-size", "font-size", "text-style"],
+    answer: "font-size"
+  },
+  {
+    question: "How do you write 'Hello World' in an alert box in JavaScript?",
+    options: ["msg('Hello World')", "alertBox('Hello World')", "alert('Hello World')", "msgBox('Hello World')"],
+    answer: "alert('Hello World')"
+  },
+  {
+    question: "Which HTML tag is used to define an unordered list?",
+    options: ["<ol>", "<ul>", "<li>", "<list>"],
+    answer: "<ul>"
+  },
+  {
+    question: "Which CSS property is used to set the background color?",
+    options: ["color", "bgcolor", "background-color", "background"],
+    answer: "background-color"
+  },
+  {
+    question: "How do you create a function in JavaScript?",
+    options: ["function = myFunc()", "function myFunc()", "create myFunc()", "def myFunc()"],
+    answer: "function myFunc()"
+  },
+  {
+    question: "Which tag is used to create a line break in HTML?",
+    options: ["<br>", "<lb>", "<break>", "<newline>"],
+    answer: "<br>"
+  },
+  {
+    question: "Which HTML tag is used to define a table row?",
+    options: ["<td>", "<tr>", "<th>", "<table>"],
+    answer: "<tr>"
+  },
+  {
+    question: "Which CSS property is used to make text bold?",
+    options: ["font-weight", "text-style", "font-style", "bold"],
+    answer: "font-weight"
+  },
+  {
+    question: "How do you call a function named 'myFunction' in JavaScript?",
+    options: ["call myFunction()", "myFunction()", "call function myFunction", "run myFunction"],
+    answer: "myFunction()"
+  },
+  {
+    question: "Which HTML tag is used to define a form?",
+    options: ["<form>", "<input>", "<submit>", "<fieldset>"],
+    answer: "<form>"
+  },
+  {
+    question: "Which CSS property is used to change the font?",
+    options: ["font-family", "font-style", "font-weight", "text-font"],
+    answer: "font-family"
+  },
+  {
+    question: "Which method adds a new element at the end of an array in JavaScript?",
+    options: ["push()", "add()", "append()", "insert()"],
+    answer: "push()"
+  },
+  {
+    question: "Which tag is used to define a list item?",
+    options: ["<ul>", "<li>", "<ol>", "<item>"],
+    answer: "<li>"
+  },
+  {
+    question: "Which CSS property is used to center text?",
+    options: ["text-align", "align", "center", "text-center"],
+    answer: "text-align"
+  },
+  {
+    question: "How do you write a comment in HTML?",
+    options: ["// comment", "/* comment */", "<!-- comment -->", "# comment"],
+    answer: "<!-- comment -->"
+  },
+  {
+    question: "Which JavaScript keyword is used to declare a variable?",
+    options: ["var", "int", "let", "Both var and let"],
+    answer: "Both var and let"
+  },
+  {
+    question: "Which HTML tag is used to define a paragraph?",
+    options: ["<para>", "<p>", "<text>", "<paragraph>"],
+    answer: "<p>"
+  },
+  {
+    question: "Which CSS property is used to add space inside an element?",
+    options: ["margin", "padding", "spacing", "border"],
+    answer: "padding"
+  },
+  {
+    question: "Which event occurs when the user clicks on an HTML element?",
+    options: ["onmouseover", "onchange", "onclick", "onmouseclick"],
+    answer: "onclick"
+  },
+  {
+    question: "Which HTML tag is used to define a checkbox?",
+    options: ["<checkbox>", "<input type='checkbox'>", "<check>", "<box>"],
+    answer: "<input type='checkbox'>"
+  },
+  {
+    question: "Which CSS property is used to hide an element?",
+    options: ["display: none", "visibility: hidden", "Both A and B", "opacity: 0"],
+    answer: "Both A and B"
+  }
+];
     
     let currentQuestion = 0;
     let score = 0;
@@ -957,22 +1103,22 @@
     const nextBtn = document.getElementById('next-btn');
     const resultEl = document.getElementById('result');
     
-    function loadQuestion() {
-      const currentQuizData = quizData[currentQuestion];
-      questionEl.textContent = currentQuizData.question;
-      optionsEl.innerHTML = '';
-      
-      currentQuizData.options.forEach(option => {
-        const button = document.createElement('div');
-        button.classList.add('quiz-option');
-        button.textContent = option;
-        button.addEventListener('click', () => selectAnswer(option));
-        optionsEl.appendChild(button);
-      });
-      
-      nextBtn.style.display = 'none';
-      resultEl.textContent = '';
-    }
+  function loadQuestion() {
+  const currentQuizData = quizData[currentQuestion];
+  questionEl.textContent = `${currentQuestion + 1}. ${currentQuizData.question}`;
+  optionsEl.innerHTML = '';
+
+  currentQuizData.options.forEach(option => {
+    const button = document.createElement('div');
+    button.classList.add('quiz-option');
+    button.textContent = option;
+    button.addEventListener('click', () => selectAnswer(option));
+    optionsEl.appendChild(button);
+  });
+
+  nextBtn.style.display = 'none';
+  resultEl.textContent = '';
+}
     
     function selectAnswer(selected) {
       const correctAnswer = quizData[currentQuestion].answer;
@@ -981,9 +1127,9 @@
       options.forEach(option => {
         option.style.pointerEvents = 'none';
         if (option.textContent === correctAnswer) {
-          option.style.background = '#d4edda';
+          option.style.background = '#85E86C';
         } else if (option.textContent === selected && selected !== correctAnswer) {
-          option.style.background = '#f8d7da';
+          option.style.background = '#EA7575';
         }
       });
       
@@ -1140,13 +1286,24 @@
     });
     
     // CONTACT FORM 
-    const contactForm = document.getElementById('contactForm');
+    // const contactForm = document.getElementById('contactForm');
     
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Thank you for your message! I will get back to you soon.');
-      contactForm.reset();
-    });
+    // contactForm.addEventListener('submit', (e) => {
+    //   e.preventDefault();
+    //   alert('Thank you for your message! I will get back to you soon.');
+    //   contactForm.reset();
+    // });
+
+    //Contact form data
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxsNPajzQ-4TSQ_u7D8kqqRRaiqf1JGNSxVad3188MsJlOFPDntO8dL02U89XmRcU-W/exec'
+    const form = document.forms['google-sheet']
+          
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+      .catch(error => console.error('Error!', error.message))
+    })
     
     // INITIALIZE 
     loadQuestion();
