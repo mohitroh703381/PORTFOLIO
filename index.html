@@ -41,12 +41,12 @@
       top: 0;
       z-index: 1000;
     }
-    
-    #logo {
+
+    #logo a {
+      text-decoration: none;
       font-size: 26px;
       font-weight: bold;
       color: white;
-      cursor: pointer;
     }
     
     nav {
@@ -508,6 +508,10 @@
       min-height: 140px;
       resize: vertical;
     }
+
+    select {
+      width: 300px;
+    }
     
     /* Footer */
     footer {
@@ -622,6 +626,10 @@
         flex-direction: column;
       }
 
+      select {
+        width: 260px;
+      }
+
       select option {
         font-size: 15px;
         font-weight: 450;
@@ -629,14 +637,14 @@
 
       .form-group input,
       .form-group textarea {
-      width: 340px;
+      width: 305px;
     }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1 id="logo">Mohit's Portfolio</h1>
+    <h1 id="logo"><a href="#home">Mohit's Portfolio</a></h1>
     <button class="menu-toggle">☰</button>
     <nav id="navbar">
       <a href="#home">Home</a>
@@ -764,9 +772,9 @@
         
         <!-- Certificate 2 -->
         <div class="certificate">
-          <img src="images/c.png" alt="C Certificate" class="certificate-img">
+          <img src="images/oracle.png" alt="Oracle Certificate" class="certificate-img">
           <div class="certificate-info all-bg">
-            <div class="certificate-title">C Programming</div>
+            <div class="certificate-title">Oracle Cloud Certificate</div>
             <div class="certificate-date">Issued: May 1, 2025</div>
             <a href="#" class="view-btn view">View Certificate</a>
             <a href="#" class="view-btn download-btn"><i class="fa-solid fa-download"></i> Download Certificate</a>
@@ -1187,12 +1195,12 @@
     
     // PRODUCTS FILTERING
     const products = [
-      { name: "Smartphone", category: "Electronics", price: 299, rating: 4.5 },
-      { name: "Laptop", category: "Electronics", price: 999, rating: 4.7 },
-      { name: "Headphones", category: "Electronics", price: 99, rating: 4.0 },
-      { name: "JavaScript Book", category: "Books", price: 29, rating: 4.8 },
-      { name: "CSS Guide", category: "Books", price: 19, rating: 4.3 },
-      { name: "HTML Reference", category: "Books", price: 24, rating: 4.1 }
+      { name: "Smartphone", category: "Electronics", price: 12999, rating: 4.5 },
+      { name: "Laptop", category: "Electronics", price: 52695, rating: 4.7 },
+      { name: "Headphones", category: "Electronics", price: 1430, rating: 4.0 },
+      { name: "JavaScript Book", category: "Books", price: 461, rating: 4.8 },
+      { name: "CSS Guide", category: "Books", price: 390, rating: 4.3 },
+      { name: "HTML Reference", category: "Books", price: 340, rating: 4.1 }
     ];
     
     const categoryFilter = document.getElementById('categoryFilter');
@@ -1208,7 +1216,7 @@
         productEl.innerHTML = `
           <h3>${product.name}</h3>
           <p><strong>Category:</strong> ${product.category}</p>
-          <p><strong>Price:</strong> $${product.price}</p>
+          <p><strong>Price:</strong> ₹${product.price}</p>
           <p><strong>Rating:</strong> ${product.rating} ★</p>
         `;
         productList.appendChild(productEl);
